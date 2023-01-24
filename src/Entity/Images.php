@@ -37,6 +37,11 @@ class Images
      */
     private $Prestataire;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Prestataire::class, mappedBy="logo", cascade={"persist", "remove"})
+     */
+    private $prestataire;
+
     public function getId(): ?int
     {
         return $this->id;

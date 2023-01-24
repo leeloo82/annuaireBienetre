@@ -74,6 +74,11 @@ class Prestataire
      */
     private $Images;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Images::class, inversedBy="prestataire", cascade={"persist", "remove"})
+     */
+    private $logo;
+
     public function __construct()
     {
         $this->Commentaire = new ArrayCollection();
@@ -310,6 +315,18 @@ class Prestataire
                 $image->setPrestataire(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLogo(): ?Images
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(?Images $logo): self
+    {
+        $this->logo = $logo;
 
         return $this;
     }
