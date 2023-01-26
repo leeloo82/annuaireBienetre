@@ -1,0 +1,13 @@
+.l-header-logo{
+
+  h1 {
+    font-size: 1.5rem;
+    color: map-get($color, first);
+
+    &::first-letter {
+
+      text-transform: uppercase;
+    }
+  }
+
+}

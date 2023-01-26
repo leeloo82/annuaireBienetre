@@ -1,5 +1,11 @@
-$color : pink;
 
-body {
-    background-color: $color;
-}
+@import "base/variables";
+@import "base/general";
+
+//layout complex
+@import "layout/l-header";
+@import "layout/l-nav";
+@import "layout/l-main";
+@import "layout/l-footer";
+
+//module
