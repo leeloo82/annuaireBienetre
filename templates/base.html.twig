@@ -13,7 +13,42 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
+    <header>
+        {% block header %}
+            <div class ='l-header-logo'>
+                <img src="#" alt="logo annuaire bien être" title="logo annuaire bien être">
+            </div>
+            <div id="burgerMenu">
+                <div class = "icon-menu">
+                    {#lien fontwesome pour icone burger #}
+                    {# <a href="#" class="fas fa-bars"></a> #}
+                </div>
+                <div>
+                    <nav>
+                        <ul>
+                            <li><a href="#">categorie</a></li>
+                            <li><a href="#">a propos</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">mon compte</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        {% endblock %}
+    </header>
     <body>
         {% block body %}{% endblock %}
     </body>
+    <footer>
+        {% block footer%}
+            <h2>annuaire bien être</h2>
+            <div>
+                <ul>
+                    <li><a href="#">newsletter</a></li>
+                    <li><a href="#">a propos</a></li>
+                    <li><a href="#">contactez-nous</a></li>
+                </ul>
+            </div>
+        {% endblock %}
+    </footer>
 </html>
