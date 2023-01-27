@@ -18,7 +18,8 @@
         {% block header %}
 
             <div class ='l-header-logo'>
-                <img src="#" alt="logo annuaire bien être" title="logo annuaire bien être">
+                 <img src="{{ asset('build/pictures/logo2.png') }}" alt="logo annuaire bien être" title="logo annuaire bien être">
+
                 <h1 class="logo-title">annuaire bien être</h1>
             </div>
             <div id="burgerMenu">
@@ -30,6 +31,7 @@
                     <nav class="l-header-nav-wrap">
                         <ul>
                             <li><a href="#">categorie</a></li>
+                            {# faire menu derouland pour categorie en lien avec la bd sera dynamique #}
                             <li><a href="#">a propos</a></li>
                             <li><a href="#">Contact</a></li>
                             <li><a href="#">mon compte</a></li>
