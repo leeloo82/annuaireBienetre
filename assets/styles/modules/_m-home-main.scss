@@ -1,0 +1,20 @@
+.grid-container-bodyHome{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  row-gap: 5%;
+  margin: 0 auto;
+  padding: 0 10rem 0 14rem;
+
+}
+.PictureNewPrestaire{
+  width: 20rem;
+  height: 20rem;
+  background-color: #867f7f;
+}
+.containerServiceMois{
+  width: 62%;
+  height: 15rem;
+  background-color: #867f7f;
+  margin: 5rem auto ;
+
+}

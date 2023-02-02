@@ -10,13 +10,10 @@
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
         {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
     </head>
-    <header class="l-header-main">
+    <header>
         {% block header %}
-
+        <div class="l-header-main">
             <div class ='l-header-logo'>
                  <img src="{{ asset('build/pictures/logo2.png') }}" alt="logo annuaire bien être" title="logo annuaire bien être">
 
@@ -27,9 +24,9 @@
                     {#lien fontwesome pour icone burger #}
                     <a href="#" class="fas fa-bars"></a>
                 </div>
-                <div class="l-header-nav">
-                    <nav class="l-header-nav-wrap">
-                        <ul>
+                <div id="mainMenu" class="l-header-nav">
+                    <nav>
+                        <ul class="l-header-nav-wrap">
                             <li><a href="#">categorie</a></li>
                             {# faire menu derouland pour categorie en lien avec la bd sera dynamique #}
                             <li><a href="#">a propos</a></li>
@@ -39,15 +36,16 @@
                     </nav>
                 </div>
             </div>
-        {% endblock %}
-    </header>
-    <body>
+        </div>
         <div class="langue">
             <p>fr | nl</p>
         </div>
         <div class="slider">
             <p>Slider</p>
         </div>
+        {% endblock %}
+    </header>
+    <body>
         <div class="recherche">
 
         </div>
@@ -67,4 +65,11 @@
             </div>
         {% endblock %}
     </footer>
+
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        <script src="{{asset('js/menu.js')}}"></script>
+
+    {% endblock %}
 </html>

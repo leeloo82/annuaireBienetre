@@ -13,7 +13,7 @@ html{
 }
 
 body{
-
+  width: 100%;
   margin: 0;
   padding: 0;
   background-color: map-get($color,background-principal);
@@ -24,8 +24,6 @@ body{
   bottom: 0;
   width: 100%;
 }*/
-
-
 
 ul{
 
@@ -45,3 +43,5 @@ a{
   text-decoration: none;
 
 }
+
+
