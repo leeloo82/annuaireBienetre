@@ -1,20 +1,50 @@
+.m-contenaire-grid-mainHome{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+}
+.recherche{
+  display: block;
+  width: 100%;
+  height: 10rem;
+  background-color: map-get($color,first);
+  margin: 2rem 0rem 0rem 0rem ;
+}
+
 .grid-container-bodyHome{
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  row-gap: 5%;
-  margin: 0 auto;
-  padding: 0 10rem 0 14rem;
+  //row-gap: 5%;
+  grid-gap: 1rem;
+  margin: 0 4rem;
+ // padding: 0 5rem 0 14rem;
 
 }
 .PictureNewPrestaire{
-  width: 20rem;
+  //width: 20rem;
   height: 20rem;
   background-color: #867f7f;
 }
 .containerServiceMois{
-  width: 62%;
+  //width: 62%;
   height: 15rem;
   background-color: #867f7f;
-  margin: 5rem auto ;
+  margin: 0 4rem ;
 
 }
+
+/*@media (min-width: 1024px) {
+
+  .grid-container-bodyHome{
+
+    column-gap: 5%;
+    padding: 0 10rem 0 25rem;
+
+  }
+
+  .containerServiceMois{
+    width: 57%;
+    margin: 5rem 25rem ;
+
+  }
+
+}*/

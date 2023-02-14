@@ -56,10 +56,10 @@
     }
   }
 }
-@media screen and (min-width: 720px){
-.l-header-nav.is-active {
-    display: none;
 
+@media (min-width: 720px){
+  .l-header-nav.is-active {
+    display: none;
   }
   .icon-menu{
     display : none;
@@ -82,9 +82,8 @@
         font-size : 2rem;
         font-weight: normal;
       }
+    }
+
   }
 
-
-  }/*l-header-nav-wrap end*/
-
-}//fin media queries
+}
