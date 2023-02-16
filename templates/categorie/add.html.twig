@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formCategorie 'bootstrap_5_layout.html.twig' %}
+{% block title %} Categorie add{% endblock %}
+
+{% block body %}
+
+    <h1>ajout categorie</h1>
+    <div class="form container">
+        {{ form_start(formCategorie) }}
+        {{ form_widget(formCategorie) }}
+        <div>
+            <input type="submit" value="Enregistrer" class="btn btn-primary"/>
+        </div>
+        {{ form_end(formCategorie) }}
+    </div>
+{% endblock %}
