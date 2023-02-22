@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategorieController extends AbstractController
 {
     /**
-     * @Route("/categorie", name="app_categorie")
+     * @Route("/categorieADD", name="app_categorie_add")
      */
     public function formCategorie(EntityManagerInterface $entityManager,Request $request): Response
     {
@@ -37,6 +37,32 @@ class CategorieController extends AbstractController
         //creation de la vue
         return $this->render ('categorie/add.html.twig',[
             'formCategorie'=>$formCategorie->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/categorie/description/{id}", name="app_description")
+     */
+    public function descriptionService($id, EntityManagerInterface $entityManager){
+
+        $repository = $entityManager->getRepository(CategorieServices::class);
+        $description = $repository->find($id);
+        return $this->render('categorie/description.html.twig',[
+            'description'=> $description,
+        ]);
+    }
+    /**
+     * @Route("/categorie", name="app_categorie")
+     */
+    public function DisplayCategorie(EntityManagerInterface $entityManager): Response
+    {
+        //creation variable reception objet
+        $repository = $entityManager->getRepository(CategorieServices::class);
+
+        $categorie = $repository->findAll();
+
+        return $this->render('categorie/description.html.twig', [
+            'list'=>$categorie,
         ]);
     }
 

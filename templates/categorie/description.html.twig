@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}description service{% endblock %}
+
+{% block body %}
+
+
+<div class="card" style="width: 18rem;">
+    <img src="{{ asset('build/pictures/servicePrestataire') }}" class="card-img-top" alt="illustration service">
+    <div class="card-body">
+        <h5 class="card-title">{{ description.nomService }}</h5>
+        <p class="card-text">{{ description.description}}</p>
+    </div>
+
+    <div class="card-body">
+        <a href="#" class="card-link">consulter prestataires du service</a>
+       <!-- <a href="#" class="card-link">Another link</a>-->
+    </div>
+</div>
+{% endblock %}

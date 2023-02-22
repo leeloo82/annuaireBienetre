@@ -32,13 +32,13 @@
                                 <ul class="drop">
                                     {% if list is defined %}
                                         {% for key in list %}
-                                            <li><a href="#">{{key.nomService}}</a></li>
+                                            <li><a href="{{ path('app_description',{id:key.id}) }}">{{key.nomService}}</a></li>
                                         {% endfor %}
                                     {% endif %}
                                 </ul>
                             </li>
                             <li><a href="#">a propos</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">contact</a></li>
                             <li><a href="#">mon compte</a></li>
                         </ul>
                     </nav>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="{{ asset('build/pictures/slide1.jpeg') }}" class="d-block w-100" alt="...">
+                        <img src="{{ asset('build/pictures/slide8.jpeg') }}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
                         <img src="{{ asset('build/pictures/slide5.jpeg') }}" class="d-block w-100" alt="...">
