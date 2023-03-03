@@ -4,11 +4,13 @@ namespace App\Entity;
 
 use App\Repository\UtilisateurRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UtilisateurRepository::class)
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
 class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -59,6 +61,11 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\OneToOne(targetEntity=Internaute::class, inversedBy="Utilisateur", cascade={"persist", "remove"})
      */
     private $Internaute;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
 
     public function getId(): ?int
     {
@@ -205,6 +212,18 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     public function setInternaute(?Internaute $Internaute): self
     {
         $this->Internaute = $Internaute;
+
+        return $this;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
 
         return $this;
     }
