@@ -1,8 +1,9 @@
 //style mobile
 .icon-menu{
   position: absolute;
-  left: 90%;
-  top: 3rem;
+  left: 80%;
+  top: 1rem;
+
   a{
     color:  map-get($color, first);
     font-size: 4rem;
@@ -28,6 +29,7 @@
   /*pour qu'a l'ouverture le menu ce place au-dessous de tout les éléments*/
   position: absolute;
   width: 100%;
+
 }
 
 .l-header-nav.is-active {
@@ -37,8 +39,16 @@
   //animation: translateMenu 1s ;
 
 }
+.wrap{
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  z-index: 99;
+  position: relative;
 
+}
 /*contenu menu*/
+
 .l-header-nav-wrap{
   display: flex;
   flex-direction: column;
@@ -47,13 +57,11 @@
   width: 100%;
   height: 50px;
   margin: 0;
-  z-index: 99;
   position: relative;
- // background-color: #444444;
 
-  //margin: 0 1rem ;
   li {
-   margin: 1rem 1rem;
+    z-index: 1;
+    margin: 1rem 1rem;
 
     height: auto;
     width: 100%;
@@ -65,19 +73,17 @@
     margin: 0;
    // background-color: #444444;
 
-
-    &::first-letter {
-
-      text-transform: uppercase;
-    }
     a {
-      font-size : 3rem;
+      font-size : 1rem;
       font-weight: bold ;
       color: map-get($color,first);
 
-      padding: 1rem 0;
+      padding: 0.5rem 0;
       color: map-get($color,first);
       display: block;
+      &::first-letter {
+        text-transform: uppercase;
+      }
     }
 
     li:hover, a:hover {
@@ -86,14 +92,20 @@
 
     /* mise en cache par defaut du menu deroulant*/
 
-
-
+    li ul{
+      display: none;
+      height: auto;
+      margin: 0;
+      padding: 0;
+    }
+    li:hover ul {
+      display: block;
+    }
   }
 }
 
+@media (min-width: 500px){
 
-
-@media (min-width: 720px){
   .l-header-nav.is-active {
     display: none;
   }
@@ -107,7 +119,7 @@
     position: relative;
 
   }
-  .l-header-nav-wrap{
+ .l-header-nav-wrap{
 
     display: flex;
     flex-direction: row;
@@ -115,7 +127,7 @@
     li{
       margin: 0 1rem;
       a {
-        font-size : 2rem;
+       // font-size : 1rem;
         font-weight: normal;
       }
     }

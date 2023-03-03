@@ -52,7 +52,7 @@ class CategorieController extends AbstractController
         ]);
     }
     /**
-     * @Route("/categorie", name="app_categorie")
+     * @Route("/categorie/description/{id}", name="app_categorie")
      */
     public function DisplayCategorie(EntityManagerInterface $entityManager): Response
     {
